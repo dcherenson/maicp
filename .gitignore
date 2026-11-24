@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.ruff_cache/
+.DS_Store
+results/
+
+# Figure exports and animations
+*.pdf
+*.png
+*.svg
+*.gif
+!/experiments/payload/mission.gif
+!/experiments/formation/mission.gif
+!/experiments/tracking/mission.gif
