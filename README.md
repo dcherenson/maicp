@@ -69,12 +69,16 @@ uv run python run.py formation
 
 Five ground robots and five aerial robots track a moving target. The ground robots measure range and bearing with LiDAR. The aerial robots measure bearing with monocular cameras. Each robot combines observations with its neighbors using a distributed rolling window estimator. The estimator predicts the target's planar position and velocity with a constant velocity model at intervals of $\Delta t=0.5$ seconds:
 
-$$
-x_k^{\mathrm{tar}}=\begin{bmatrix}p_k^{\mathrm{tar}}\\v_k^{\mathrm{tar}}\end{bmatrix},\qquad
+```math
+x_k^{\mathrm{tar}}=\begin{bmatrix}p_k^{\mathrm{tar}}
+\\
+v_k^{\mathrm{tar}}\end{bmatrix},\qquad
 x_{k+1}^{\mathrm{tar}}=
-\begin{bmatrix}I_2 & \Delta t I_2\\0 & I_2\end{bmatrix}
+\begin{bmatrix}I_2 & \Delta t I_2
+\\
+0 & I_2\end{bmatrix}
 x_k^{\mathrm{tar}}+w_k.
-$$
+```
 
 Here $w_k$ is process noise. The class margin affects both the weight given to measurements and the size of the reported position ellipse. To score robot $i$, we compare its estimate with the true target position, $e_{i,k}=\hat p_{i,k}-p_k^{\mathrm{tar}}$. The position covariance $P_{i,k}$ sets the scale of the error in each direction. The score is the largest amount by which the resulting Mahalanobis distance exceeds the nominal ellipse radius:
 
