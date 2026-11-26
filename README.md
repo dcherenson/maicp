@@ -1,4 +1,4 @@
-# Multi-agent Interactive Conformal Prediction (MA-ICP)
+# Multi-Agent Interactive Conformal Prediction (MA-ICP)
 
 This repository contains the three simulation studies from [“Distributed Interactive Conformal Prediction for Multi-Agent Systems”](https://arxiv.org/abs/2611.29037) by Daniel M. Cherenson and Dimitra Panagou. We use conformal prediction to calibrate a robustness margin for each robot class. The margin sets a threshold for the error measured during a mission. For example, in formation control it specifies how much acceleration prediction error the controller allows for when avoiding obstacles.
 
